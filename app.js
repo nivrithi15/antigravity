@@ -57,30 +57,10 @@ const flowData = {
         text: ["Hi! I'm Voxara 👋 Ask me anything about elections. What would you like to explore?"],
         options: [
             { label: "How elections work", next: "how_work" },
-            { label: "View timeline", next: "redirect_timeline" },
-            { label: "Take quiz", next: "redirect_quiz" },
-            { label: "Voting Simulation", next: "redirect_simulate", isPrimary: true },
-            { label: "Compare Countries", next: "redirect_compare" },
+            { label: "Am I eligible to vote?", next: "eligibility_start", isPrimary: true },
+            { label: "Typical Timeline", next: "timeline_start" },
             { label: "Change country", next: "init" }
         ]
-    },
-    
-    // Redirection nodes
-    redirect_timeline: {
-        text: ["Taking you to the interactive timeline..."],
-        redirect: "timeline.html"
-    },
-    redirect_quiz: {
-        text: ["Opening the knowledge quiz..."],
-        redirect: "quiz.html"
-    },
-    redirect_compare: {
-        text: ["Opening the comparison tool..."],
-        redirect: "compare.html"
-    },
-    redirect_simulate: {
-        text: ["Entering the voting simulation booth..."],
-        redirect: "simulate.html"
     },
     
     // Additional flow nodes (how_work, steps_start, etc.) remain configured in flowData...
@@ -385,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
         optionsContainer: document.getElementById('options-container'),
         typingIndicator: document.getElementById('typing-indicator'),
         restartBtn: document.getElementById('restart-btn'),
-        progressContainer: document.querySelector('.progress-tracker'),
+        progressContainer: document.getElementById('progress-container'),
         progressFill: document.getElementById('progress-fill'),
         progressText: document.getElementById('progress-text')
     };
