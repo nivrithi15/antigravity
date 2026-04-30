@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Timeline - Voxara</title>
+    <!-- Google Fonts: Outfit, Roboto, Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="accessibility.css">
+</head>
+<body>
+    <div class="aurora-bg"></div>
+
+    <div class="timeline-container">
+        <header class="timeline-header">
+            <div class="nav-links">
+                <a href="index.html" class="back-btn" aria-label="Go back to Home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Voxara</a>
+                <a href="quiz.html" class="back-btn quiz-nav-btn" aria-label="Take the Quiz"><i class="fa-solid fa-clipboard-question" aria-hidden="true"></i> Take Quiz</a>
+                <a href="simulate.html" class="back-btn" aria-label="Voting Simulation"><i class="fa-solid fa-box-archive" aria-hidden="true"></i> Simulate</a>
+                <a href="compare.html" class="back-btn" aria-label="Compare Systems"><i class="fa-solid fa-right-left" aria-hidden="true"></i> Compare</a>
+                <div class="translate-wrapper">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+            <h1>Interactive Timeline</h1>
+            <p>From registration to result—follow the journey of an election.</p>
+        </header>
+
+        <main class="timeline">
+            <!-- Phase 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-content card glass">
+                    <div class="phase-badge purple">Months Before</div>
+                    <h2>Candidate Filing & Registration</h2>
+                    <p>The journey begins with candidates officially declaring their intent to run. Simultaneously, election commissions open voter registration drives to ensure every citizen is on the electoral roll.</p>
+                    <ul class="timeline-details">
+                        <li><i class="fa-solid fa-check"></i> Registration Deadlines</li>
+                        <li><i class="fa-solid fa-check"></i> Eligibility Verification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-content card glass">
+                    <div class="phase-badge blue">Campaign Season</div>
+                    <h2>The Campaign Trail</h2>
+                    <p>Candidates hit the road! This phase is filled with debates, rallies, and advertisements. Voters use this time to study manifestos and decide which vision for the future they support.</p>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-content card glass">
+                    <div class="phase-badge yellow">Election Day</div>
+                    <h2>Casting Your Ballot</h2>
+                    <p>The big day arrives! Polling stations open across the country. Citizens cast their votes in secret, fulfilling their fundamental democratic duty.</p>
+                    <div class="day-highlight">
+                        <i class="fa-solid fa-clock"></i> 7:00 AM - 6:00 PM (Local Time)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-item right">
+                <div class="timeline-content card glass">
+                    <div class="phase-badge green">Counting & Results</div>
+                    <h2>The Tally & Declaration</h2>
+                    <p>Once polls close, the counting begins. Officials audit the votes, ensure every ballot is accounted for, and finally declare the official winner of the election.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="theme.js"></script>
+</body>
+</html>

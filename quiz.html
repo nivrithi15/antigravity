@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Knowledge Quiz - Voxara</title>
+    <!-- Google Fonts: Outfit, Roboto, Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="accessibility.css">
+</head>
+<body>
+    <div class="aurora-bg"></div>
+
+    <div class="app-container glass">
+        <header class="app-header">
+            <div class="header-top">
+                <a href="index.html" class="back-btn" aria-label="Go back to Home">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
+                </a>
+                <div class="translate-wrapper">
+                    <div id="google_translate_element"></div>
+                </div>
+                <div class="header-actions">
+                    <a href="simulate.html" class="nav-link" title="Voting Simulation" aria-label="Go to Voting Simulation">
+                        <i class="fa-solid fa-box-archive" aria-hidden="true"></i> Simulate
+                    </a>
+                    <a href="compare.html" class="nav-link" title="Compare Systems" aria-label="Go to Comparison Tool">
+                        <i class="fa-solid fa-right-left" aria-hidden="true"></i> Compare
+                    </a>
+                </div>
+            </div>
+            <div class="quiz-info">
+                <h1>Knowledge Quiz</h1>
+                <p>Test your understanding of the election process.</p>
+            </div>
+        </header>
+
+        <main class="quiz-main" id="quiz-main">
+            <!-- Start Screen -->
+            <div id="start-screen" class="quiz-screen active">
+                <div class="quiz-icon"><i class="fa-solid fa-brain"></i></div>
+                <h2>Ready to Begin?</h2>
+                <p>10 Questions to prove you're an informed citizen.</p>
+                <button id="start-quiz-btn" class="primary-btn">Start Quiz</button>
+            </div>
+
+            <!-- Question Screen -->
+            <div id="question-screen" class="quiz-screen">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="question-count" id="question-count">Question 1 of 10</div>
+                <h2 id="question-text">How old do you have to be to vote in most national elections?</h2>
+                <div class="options-grid" id="options-grid">
+                    <!-- Options will be injected here -->
+                </div>
+                <div class="feedback-text" id="feedback-text"></div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="results-screen" class="quiz-screen">
+                <div class="results-header">
+                    <div class="score-circle">
+                        <span id="final-score">0</span><small>/10</small>
+                    </div>
+                    <h2 id="result-title">Good Effort!</h2>
+                    <p id="result-message">You've got a solid foundation. Keep learning to become a pro voter!</p>
+                </div>
+                
+                <!-- Social Sharing Section -->
+                <div class="share-section">
+                    <h3>Share Your Score</h3>
+                    <div class="share-buttons">
+                        <button id="share-twitter" class="share-btn twitter" title="Share on Twitter"><i class="fa-brands fa-x-twitter"></i></button>
+                        <button id="share-whatsapp" class="share-btn whatsapp" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                        <div class="copy-link-wrapper">
+                            <button id="copy-link" class="share-btn link" title="Copy Link"><i class="fa-solid fa-link"></i></button>
+                            <span class="tooltip" id="copy-tooltip">Copied!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="restart-quiz-btn" class="secondary-btn">Try Again</button>
+                    <a href="index.html" class="primary-btn">Return to Voxara</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
