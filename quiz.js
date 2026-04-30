@@ -227,5 +227,38 @@ DOM.nextBtn.addEventListener('click', () => {
     }
 });
 
+/**
+ * SOCIAL SHARING LOGIC
+ */
+function initSharing() {
+    const shareTwitter = document.getElementById('share-twitter');
+    const shareWhatsapp = document.getElementById('share-whatsapp');
+    const shareCopy = document.getElementById('share-copy');
+    const copyTooltip = document.getElementById('copy-tooltip');
+
+    const getShareText = () => {
+        return `I just scored ${score}/6 on the Voxara Election Quiz! 🗳️ Can you beat my score? Learn about elections at: ${window.location.origin}${window.location.pathname.replace('quiz.html', 'index.html')}`;
+    };
+
+    shareTwitter.addEventListener('click', () => {
+        const text = encodeURIComponent(getShareText());
+        window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+    });
+
+    shareWhatsapp.addEventListener('click', () => {
+        const text = encodeURIComponent(getShareText());
+        window.open(`https://wa.me/?text=${text}`, '_blank');
+    });
+
+    shareCopy.addEventListener('click', () => {
+        const url = `${window.location.origin}${window.location.pathname.replace('quiz.html', 'index.html')}`;
+        navigator.clipboard.writeText(url).then(() => {
+            copyTooltip.classList.add('show');
+            setTimeout(() => copyTooltip.classList.remove('show'), 2000);
+        });
+    });
+}
+
 // Initial load
 initQuiz();
+initSharing();

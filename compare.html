@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Election Systems - Voxara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="compare.css">
+    <link rel="stylesheet" href="accessibility.css">
+</head>
+<body>
+    <div class="aurora-bg"></div>
+
+    <div class="compare-container">
+        <header class="compare-header">
+            <div class="nav-links">
+                <a href="index.html" class="back-btn" aria-label="Go back to Home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Chat</a>
+                <a href="quiz.html" class="back-btn" aria-label="Take the Quiz"><i class="fa-solid fa-clipboard-question" aria-hidden="true"></i> Quiz</a>
+                <a href="simulate.html" class="back-btn" aria-label="Voting Simulation"><i class="fa-solid fa-box-archive" aria-hidden="true"></i> Simulate</a>
+                <a href="timeline.html" class="back-btn" aria-label="View Timeline"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Timeline</a>
+                <div class="translate-wrapper">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+            <h1>Compare Election Systems</h1>
+            <p>Select two countries to see how their systems differ.</p>
+        </header>
+
+        <main class="compare-grid">
+            <!-- Slot A -->
+            <div class="compare-slot" id="slot-a">
+                <div class="selector-card">
+                    <select class="country-select" id="select-a">
+                        <option value="" disabled selected>Select Country A</option>
+                        <option value="india">India</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                </div>
+                <div class="content-card glass" id="card-a">
+                    <div class="placeholder-text">Please select a country to compare.</div>
+                </div>
+            </div>
+
+            <div class="compare-vs">VS</div>
+
+            <!-- Slot B -->
+            <div class="compare-slot" id="slot-b">
+                <div class="selector-card">
+                    <select class="country-select" id="select-b">
+                        <option value="" disabled selected>Select Country B</option>
+                        <option value="india">India</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                </div>
+                <div class="content-card glass" id="card-b">
+                    <div class="placeholder-text">Please select a country to compare.</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="compare.js"></script>
+</body>
+</html>

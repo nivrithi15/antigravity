@@ -43,7 +43,7 @@ function processText(text) {
  */
 const flowData = {
     init: {
-        text: ["Hi! I'm Voxara. 👋", "I can help you understand how elections work.", "To give you the best experience, please select your region first:"],
+        text: ["Hi! I'm Voxara 👋", "I can help you understand how elections work.", "Please select your country to continue:"],
         options: [
             { label: "India", next: "set_india" },
             { label: "United States", next: "set_us" },
@@ -60,13 +60,14 @@ const flowData = {
     set_general: { setRegion: "general", nextNode: "start" },
     
     start: {
-        text: ["Hi! I'm Voxara. I can help you understand how elections work. What would you like to explore?"],
+        text: ["Hi! I'm Voxara 👋 I can help you understand how elections work. What would you like to explore?"],
         options: [
             { label: "How elections work", next: "how_work" },
-            { label: "Steps to vote", next: "steps_start" },
-            { label: "Timeline of elections", next: "redirect_timeline" },
-            { label: "Take the Quiz", next: "redirect_quiz" },
-            { label: "Select country", next: "init" }
+            { label: "View timeline", next: "redirect_timeline" },
+            { label: "Take quiz", next: "redirect_quiz" },
+            { label: "Voting Simulation", next: "redirect_simulate", isPrimary: true },
+            { label: "Compare Countries", next: "redirect_compare" },
+            { label: "Change country", next: "init" }
         ]
     },
     
@@ -78,6 +79,14 @@ const flowData = {
     redirect_quiz: {
         text: ["Opening the knowledge quiz..."],
         redirect: "quiz.html"
+    },
+    redirect_compare: {
+        text: ["Opening the comparison tool..."],
+        redirect: "compare.html"
+    },
+    redirect_simulate: {
+        text: ["Entering the voting simulation booth..."],
+        redirect: "simulate.html"
     },
     
     // Additional flow nodes (how_work, steps_start, etc.) remain configured in flowData...
@@ -373,18 +382,28 @@ function handleOptionClick(option) {
 /**
  * INITIALIZATION & NAVIGATION FLOW
  */
-DOM.restartBtn.addEventListener('click', () => {
-    DOM.chatArea.innerHTML = '';
-    DOM.chatArea.appendChild(DOM.typingIndicator);
-    applyTheme('general');
-    localStorage.removeItem('userRegion');
-    processNode('init');
-});
+document.addEventListener('DOMContentLoaded', () => {
+    DOM.restartBtn.addEventListener('click', () => {
+        // 1. Clear UI Elements
+        DOM.chatArea.innerHTML = '';
+        DOM.chatArea.appendChild(DOM.typingIndicator);
+        DOM.optionsContainer.innerHTML = '';
+        DOM.progressContainer.style.display = 'none';
+        
+        // 2. Reset regional state to allow a fresh start
+        localStorage.removeItem('userRegion');
+        userRegion = 'general';
+        applyTheme('general');
+        
+        // 3. Restart conversation from the very beginning
+        processNode('init');
+    });
 
-// STARTUP LOGIC:
-// Automatically trigger the correct conversation node on page load.
-if (!localStorage.getItem('userRegion')) {
-    processNode('init');
-} else {
-    processNode('start');
-}
+    // STARTUP LOGIC:
+    // Automatically trigger the correct conversation node on page load.
+    if (!localStorage.getItem('userRegion')) {
+        processNode('init');
+    } else {
+        processNode('start');
+    }
+});

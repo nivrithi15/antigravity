@@ -551,6 +551,75 @@ body {
     margin-top: 30px;
 }
 
+/* Share Section */
+.share-section {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.share-section h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.share-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    border-color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.share-btn.twitter:hover { background: #000000; }
+.share-btn.whatsapp:hover { background: #25D366; }
+
+.copy-tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #10b981;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Mobile adjustments */
 @media (max-width: 480px) {
     .app-container {
